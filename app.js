@@ -2,13 +2,13 @@ const express = require('express')
 const path = require('path')
 var cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
-var emotion = cool();
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'jade')
   .get('/', (req, res) => res.send('hi!'))
   .post('/message', (req, res) =>{
+    var emotion = cool();
     res.json({
       "message" : {
         "text" : emotion

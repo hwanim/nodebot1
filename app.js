@@ -18,31 +18,31 @@ express()
   .get('/keyboard', (req, res) => {
   const menu = {
       type: 'buttons',
-      buttons: ["메뉴1", "메뉴2", "메뉴3"]
+      buttons: ["사용방법"]
   };
   res.set({
       'content-type': 'application/json'
   }).send(JSON.stringify(menu));})
-  .post('/message', (req, res) => {
-    const _obj = {
-        user_key: req.body.user_key,
-        type: req.body.type,
-        content: req.body.content
-    };
-    let massage = {
-        "message": {
-            "text": '응답 메세지...'
-        },
-        "keyboard": {
-            "type": "buttons",
-            "buttons": [
-                "메뉴1",
-                "메뉴2",
-                "메뉴3"
-            ]
-        }
-    };
-    res.set({
-        'content-type': 'application/json'
-    }).send(JSON.stringify(massage));})
+  // .post('/message', (req, res) => {
+  //   const _obj = {
+  //       user_key: req.body.user_key,
+  //       type: req.body.type,
+  //       content: req.body.content
+  //   };
+  //   let massage = {
+  //       "message": {
+  //           "text": '응답 메세지...'
+  //       },
+  //       "keyboard": {
+  //           "type": "buttons",
+  //           "buttons": [
+  //               "메뉴1",
+  //               "메뉴2",
+  //               "메뉴3"
+  //           ]
+  //       }
+  //   };
+  //   res.set({
+  //       'content-type': 'application/json'
+  //   }).send(JSON.stringify(massage));})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

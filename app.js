@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const cool = require('')
 const PORT = process.env.PORT || 5000
 
 express()
@@ -7,6 +8,13 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'jade')
   .get('/', (req, res) => res.send('hi!'))
+  .post('/message', (req, res) =>{
+    res.json({
+      "message" : {
+        "text" : cool();
+      }
+    })
+  })
   .get('/keyboard', (req, res) => {
   const menu = {
       type: 'buttons',

@@ -12,7 +12,7 @@ express()
       type: 'buttons',
       buttons: ["메뉴1", "메뉴2", "메뉴3"]
   };
-  .set({
+  res.set({
       'content-type': 'application/json'
   }).send(JSON.stringify(menu));})
   .post('/message', (req, res) => {
@@ -34,7 +34,7 @@ express()
             ]
         }
     };
-    .set({
+    res.set({
         'content-type': 'application/json'
     }).send(JSON.stringify(massage));})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

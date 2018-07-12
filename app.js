@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
-const cool = require('')
+var cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
-
+var emotion = cool();
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -11,7 +11,7 @@ express()
   .post('/message', (req, res) =>{
     res.json({
       "message" : {
-        "text" : cool();
+        "text" : emotion
       }
     })
   })

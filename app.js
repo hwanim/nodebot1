@@ -45,14 +45,14 @@ app.use(express.static(path.join(__dirname, 'public')))
       }
     })
   })
-  // .get('/keyboard', (req, res) => {
-  // const menu = {
-  //     type: 'buttons',
-  //     buttons: ["사용방법"]
-  // };
-  // res.set({
-  //     'content-type': 'application/json'
-  // }).send(JSON.stringify(menu));})
+  .get('/keyboard', (req, res) => {
+  const menu = {
+      type: 'buttons',
+      buttons: ["사용방법"]
+  };
+  res.set({
+      'content-type': 'application/json'
+  }).send(JSON.stringify(menu));})
   // .post('/message', (req, res) => {
   //   const _obj = {
   //       user_key: req.body.user_key,
